@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Serveur {{ server_name }}</title>
+    <title>Serveur {{ server_name | default('inconnu') }}</title>
     <style>
         body {
             background-color: #1a1a1a;
@@ -58,12 +58,12 @@
     <div class="card">
         <div class="pirate-icon">🏴‍☠️</div>
         <h1>À l'abordage !</h1>
-        <h3>Serveur : {{ server_name }}</h3>
+        <h3>Serveur : {{ server_name | default('inconnu') }}</h3>
         
         <p class="content">{{ html_content }}</p>
         
         <div class="badge">
-            ⚓ Port d'écoute : {{ http_port }}
+            ⚓ Port d'écoute : {{ http_port | default('80') }}
         </div>
 
         <footer>
