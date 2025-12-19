@@ -44,16 +44,16 @@ jobs:
           if [ "${TF_ENV}" = "prod" ]; then
             if [ -f "${TF_ENV}/prod.tfvars" ]; then
               VF="${TF_ENV}/prod.tfvars"
-            elif [ -f "${TF_ENV}/Prod.tfvars" ]; then
-              VF="${TF_ENV}/Prod.tfvars"
+            elif [ -f "${TF_ENV}/prod.tfvars" ]; then
+              VF="${TF_ENV}/prod.tfvars"
             else
               VF="${TF_ENV}/prod.tfvars"
             fi
           else
             if [ -f "${TF_ENV}/dev.tfvars" ]; then
               VF="${TF_ENV}/dev.tfvars"
-            elif [ -f "${TF_ENV}/Dev.tfvars" ]; then
-              VF="${TF_ENV}/Dev.tfvars"
+            elif [ -f "${TF_ENV}/dev.tfvars" ]; then
+              VF="${TF_ENV}/dev.tfvars"
             else
               VF="${TF_ENV}/dev.tfvars"
             fi
