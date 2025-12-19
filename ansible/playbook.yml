@@ -7,10 +7,9 @@
 
   tasks:
     - name: Installation de Nginx
-      apt:
+      package:
         name: nginx
         state: present
-        update_cache: yes
 
     - name: Creation du fichier index.html
       copy:
