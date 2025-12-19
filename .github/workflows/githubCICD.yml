@@ -105,7 +105,7 @@ jobs:
             echo "Running apply using ${TF_VARS_FILE}"
             terraform apply -var-file="${TF_VARS_FILE}" -auto-approve
           fi
-          
+
       - name: Install Ansible
         if: github.event.inputs.confirm_destroy != 'true'
         run: |
@@ -123,11 +123,11 @@ jobs:
         if: github.event.inputs.confirm_destroy != 'true'
         run: |
           # 1. Récupération de l'IP publique depuis Terraform
-          VM_IP=$(terraform output -raw vm_public_ip)
+          vm_ip=$(terraform output -raw vm_public_ip)
           
           # 2. Création de l'inventaire dynamique
           echo "[webservers]" > inventory.ini
-          echo "$VM_IP ansible_user=ubuntu ansible_ssh_private_key_file=id_rsa" >> inventory.ini
+          echo "$vm_ip ansible_user=ubuntu ansible_ssh_private_key_file=id_rsa" >> inventory.ini
           
           # 3. Exécution du playbook
           # On désactive la vérification de l'empreinte SSH pour le premier accès
