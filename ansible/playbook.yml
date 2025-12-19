@@ -1,0 +1,32 @@
+---
+- name: Configuration de la VM Web
+  hosts: all
+  become: yes
+  vars:
+    html_content: "Déploiement automatisé avec Terraform et Ansible"
+
+  tasks:
+    - name: Installation de Nginx
+      apt:
+        name: nginx
+        state: present
+        update_cache: yes
+
+    - name: Creation du fichier index.html
+      copy:
+        content: "<html><body><h1>{{ html_content }}</h1></body></html>"
+        dest: /var/www/html/index.html
+        mode: '0644'
+      notify: Restart Nginx
+
+    - name: S'assurer que Nginx est demarre et active
+      service:
+        name: nginx
+        state: started
+        enabled: yes
+
+  handlers:
+    - name: Restart Nginx
+      service:
+        name: nginx
+        state: restarted

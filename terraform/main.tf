@@ -9,4 +9,6 @@ module "vm_module" {
   zone         = var.gcp_zone
   vm_ip = var.vm_ip
   vm_tags      = ["http-server", "ssh-server"]
+  ssh_user       = "ubuntu"
+  ssh_public_key = file("${path.root}/../id_rsa_gcp.pub")
 }
