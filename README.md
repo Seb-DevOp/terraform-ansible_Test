@@ -1,5 +1,30 @@
 # terraform-ansible_Test
 
+Description simple:
+
+- Projet minimal combinant Terraform et Ansible.
+- Terraform crée l'infrastructure (VM, réseau, etc.).
+- Ansible configure la VM (installe Nginx et déploie une page web).
+
+Intérêt:
+
+- Automatiser la création et la configuration d'une application web.
+- Séparer l'étape d'infrastructure (Terraform) de la configuration (Ansible).
+
+
+Le déploiement dispose de deux environnements (choisis manuelement)
+Pour lancer l'execution, il faut allez dans Actions => Workflows => choisir l'env
+
+Le workflow dispose d'une case a cocher pour initier un destroy,
+
+Un deploy ou un destroy demandera 2actions manuel pour lancer l'automatisation
+Lancement manuel => Puis validation des Plan pour lancer l'apply 
+
+![alt text](image.png)
+--------------------
+
+
+
 Questions /reponses
 
 T1. À quoi sert le fichier terraform.tfstate ?
