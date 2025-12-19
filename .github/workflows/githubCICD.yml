@@ -63,7 +63,7 @@ jobs:
 
       - name: Terraform init (backend configured by CI)
         run: |
-          terraform init -backend-config="bucket=bucket_terraform-ansible" -backend-config="prefix=bucket_terraform-ansible/${{ steps.resolve.outputs.tf_env }}"
+          terraform init -backend-config="prefix=bucket_terraform-ansible/${{ steps.resolve.outputs.tf_env }}"
 
       - name: Terraform plan
         run: terraform plan -var-file="${{ steps.resolve.outputs.tf_vars }}"
@@ -93,7 +93,7 @@ jobs:
 
       - name: Terraform init (backend configured by CI)
         run: |
-          terraform init -backend-config="bucket=bucket_terraform-ansible" -backend-config="prefix=bucket_terraform-ansible/${{ needs.plan.outputs.tf_env }}"
+          terraform init -backend-config="prefix=bucket_terraform-ansible/${{ needs.plan.outputs.tf_env }}"
 
       - name: Apply or Destroy
         run: |
