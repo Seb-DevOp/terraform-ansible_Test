@@ -8,5 +8,5 @@ module "vm_module" {
   region       = var.gcp_region
   zone         = var.gcp_zone
   vm_ip = var.vm_ip
-
+  tags = ["http-server", "ssh-server"]
 }

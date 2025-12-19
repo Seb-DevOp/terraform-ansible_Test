@@ -49,3 +49,19 @@ resource "google_storage_bucket" "bucket" {
   force_destroy = true
 }
 
+resource "google_compute_firewall" "allow_ssh_http" {
+  name    = "${local.vpc_name}-allow-ssh-http"
+  network = google_compute_network.vpc.name
+
+  # Autorise le trafic entrant (Ingress)
+  allow {
+    protocol = "tcp"
+    ports    = ["22", "80"]
+  }
+
+  # Définit les sources autorisées (0.0.0.0/0 = tout internet)
+  source_ranges = ["0.0.0.0/0"]
+  
+  # Optionnel : applique la règle uniquement aux instances ayant ce tag
+  target_tags = ["http-server", "ssh-server"]
+}
