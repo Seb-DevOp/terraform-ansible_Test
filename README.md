@@ -13,14 +13,17 @@ Intérêt:
 
 
 Le déploiement dispose de deux environnements (choisis manuelement)
-Pour lancer l'execution, il faut allez dans Actions => Workflows => choisir l'env
-
-Le workflow dispose d'une case a cocher pour initier un destroy,
+Pour lancer l'execution, il faut allez dans Actions => Workflows => deux workflow disponile un pour deployer un pour destroy
 
 Un deploy ou un destroy demandera 2actions manuel pour lancer l'automatisation
 Lancement manuel => Puis validation des Plan pour lancer l'apply 
 
 ![alt text](image.png)
+
+prerequis :
+Account GCP en fichier json pour le secret Github
+CLé SSH pour la config Ansible
+Bucket du stockage des tfstae créé au préalable
 --------------------
 
 
