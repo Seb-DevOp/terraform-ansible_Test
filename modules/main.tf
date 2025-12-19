@@ -46,12 +46,6 @@ resource "google_compute_instance" "vm" {
 
 }
 
-resource "google_storage_bucket" "bucket" {
-  name          = local.storage_name
-  location      = var.region
-  force_destroy = true
-}
-
 resource "google_compute_firewall" "allow_ssh_http" {
   name    = "${local.vpc_name}-allow-ssh-http"
   network = google_compute_network.vpc.name
