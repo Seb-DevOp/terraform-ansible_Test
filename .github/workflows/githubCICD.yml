@@ -93,7 +93,7 @@ jobs:
 
       - name: Terraform init (backend configured by CI)
         run: |
-          terraform init -backend-config="bucket_terraform-ansible" -backend-config="prefix=stockage_de_TFstate/${{ steps.resolve.outputs.tf_env }}"
+          terraform init -backend-config="bucket=bucket_terraform-ansible" -backend-config="prefix=stockage_de_TFstate/${{ steps.resolve.outputs.tf_env }}"
 
       - name: Apply or Destroy
         run: |
