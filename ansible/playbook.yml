@@ -3,7 +3,7 @@
   hosts: all
   become: yes
   vars:
-    html_content: "Déploiement automatisé avec Terraform et Ansible"
+    html_content: "Deploiement avec Terraform et Ansible"
     web_root: "{{ '/usr/share/nginx/html' if ansible_facts['os_family'] == 'RedHat' else '/var/www/html' }}"
 
   tasks:
