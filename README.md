@@ -11,7 +11,7 @@ Le Plan correle l'état entre le code et l'état reeel  de l'infra a l'instant T
 Le Apply, executera les changements, entre l'état du code actuel en comparant le tfstate, et prendra comme reference le PLAN
 
 T3. Pourquoi utiliser des variables dans Terraform ?
-Les varaibales permete de simplifier le code, et de le personaliser dynamiquement au besoin
+Les varaibales permete de simplifier le code, et de le personaliser dynamiquement au besoin, on evite les repetitions de code
 
 T4. Que se passe-t-il si une ressource créée par Terraform est supprimée manuellement ?
 Lors du prochain PLAN, le resultat montrera que le Tfstate n'est pas égale à l'infra actuel = Apply impossible => pour remedier cela, il faudrait enlever le bloc terraform qui a build cette ressource ou selon la possibilité, recreer la ressource manuellement avec EXACTEMENT les memes variable 
