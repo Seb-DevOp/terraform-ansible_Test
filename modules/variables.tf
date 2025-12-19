@@ -59,3 +59,13 @@ variable "vm_tags" {
   description = "Tags à appliquer à la VM"
   default     = []
 }
+variable "ssh_user" {
+  type        = string
+  description = "Nom de l'utilisateur pour la connexion SSH"
+  default     = "ubuntu"
+}
+
+variable "ssh_public_key" {
+  type        = string
+  description = "Contenu de la clé publique SSH (.pub)"
+}

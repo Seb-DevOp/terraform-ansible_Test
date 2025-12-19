@@ -22,6 +22,8 @@ resource "google_compute_instance" "vm" {
   machine_type = var.machine_type
   zone         = var.zone
   tags = var.vm_tags
+  metadata = {
+    ssh-keys = "${var.ssh_user}:${var.ssh_public_key}"}
 
   boot_disk {
     initialize_params {
