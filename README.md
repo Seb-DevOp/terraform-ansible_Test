@@ -4,7 +4,7 @@ Questions /reponses
 
 T1. À quoi sert le fichier terraform.tfstate ?
 Le fichier Tfstate permet de garder l'etat de l'infra au moment du dernier apply
-cela permet de pouvoir avoir un PLAN, afin de comparer les changements entre le code et l'état reel de l'infra 
+Cela permet de pouvoir avoir un PLAN utile, afin de comparer les changements entre le code et l'état reel de l'infra 
 
 T2. Quelle est la différence entre terraform plan et terraform apply ?
 Le Plan correle l'état entre le code et l'état reeel  de l'infra a l'instant T
