@@ -54,3 +54,8 @@ variable "assign_public_ip" {
 	type        = bool
 	default     = true
 }
+variable "vm_tags" {
+  type        = list(string)
+  description = "Tags à appliquer à la VM"
+  default     = []
+}
