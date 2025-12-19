@@ -21,8 +21,8 @@
         mode: '0755'
 
     - name: Creation du fichier index.html
-      copy:
-        content: "<html><body><h1>{{ html_content }}</h1></body></html>"
+      template:
+        src: "{{ playbook_dir }}/../site_index.html.j2"
         dest: "{{ web_root }}/index.html"
         mode: '0644'
       notify: Restart Nginx

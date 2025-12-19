@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Serveur {{ server_name }}</title>
+    <style>
+        body {
+            background-color: #1a1a1a;
+            color: #e0e0e0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .card {
+            background: #2d2d2d;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+            text-align: center;
+            border-top: 5px solid #ff6600;
+            max-width: 500px;
+        }
+        .pirate-icon {
+            font-size: 80px;
+            margin-bottom: 10px;
+        }
+        h1 {
+            color: #ff6600;
+            margin-bottom: 0.5rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+        .content {
+            font-size: 1.2rem;
+            margin-bottom: 1.5rem;
+            font-style: italic;
+        }
+        .badge {
+            background-color: #444;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            color: #ffaa00;
+            border: 1px solid #555;
+        }
+        footer {
+            margin-top: 2rem;
+            font-size: 0.8rem;
+            color: #777;
+        }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <div class="pirate-icon">🏴‍☠️</div>
+        <h1>À l'abordage !</h1>
+        <h3>Serveur : {{ server_name }}</h3>
+        
+        <p class="content">{{ html_content }}</p>
+        
+        <div class="badge">
+            ⚓ Port d'écoute : {{ http_port }}
+        </div>
+
+        <footer>
+            Déployé avec succès par <b>Ansible</b> sur Rocky Linux
+        </footer>
+    </div>
+</body>
+</html>
